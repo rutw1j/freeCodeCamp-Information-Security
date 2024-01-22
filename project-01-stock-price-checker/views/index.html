@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Stock Price Checker</title>
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./public/style.css" />
+  </head>
+  <body>
+    <div class="card-container">
+      <h1>STOCK PRICE CHECKER</h1>
+      <hr />
+
+      <div class="main-container">
+        
+        <div id="userstories" class="inner-container">
+          <h3>EXAMPLE USAGE</h3>
+          <a
+            href="https://project-01-stock-price-checker.rutw1j.repl.co/api/stock-prices?stock=GOOG"
+            ><code>/api/stock-prices?stock=GOOG</code></a
+          >
+          <br />
+          <a
+            href="https://project-01-stock-price-checker.rutw1j.repl.co/api/stock-prices?stock=GOOG&amp;like=true"
+            ><code>/api/stock-prices?stock=GOOG&amp;like=true</code></a
+          >
+          <br />
+          <a
+            href="https://project-01-stock-price-checker.rutw1j.repl.co/api/stock-prices?stock=GOOG&amp;stock=MSFT"
+            ><code>/api/stock-prices?stock=GOOG&amp;stock=MSFT</code></a
+          >
+          <br />
+          <a
+            href="https://project-01-stock-price-checker.rutw1j.repl.co/api/stock-prices?stock=GOOG&amp;stock=MSFT&amp;like=true"
+            ><code
+              >/api/stock-prices?stock=GOOG&amp;stock=MSFT&amp;like=true</code
+            ></a
+          >
+          <br />
+        </div>
+
+        <div id="testui" class="inner-container">
+          <h3>GET SINGLE PRICE &amp; TOTAL LIKES</h3>
+          <form id="testForm2" class="border">
+            <input type="text" name="stock" placeholder="GOOG" required="" />
+            <input type="checkbox" name="like" value="true" /> Like?
+            <br />
+            <br />
+            <button type="submit">Get Price!</button>
+          </form>
+        </div>
+
+        <div class="inner-container">
+          <h3>EXAMPLE RETURN</h3>
+          <code>{"stockData":{"stock":"GOOG","price":786.90,"likes":1}}</code>
+          <br />
+          <code>
+            {"stockData":[{"stock":"MSFT","price":62.30,"rel_likes":-1},{"stock":"GOOG","price":786.90,"rel_likes":1}]}
+          </code>
+        </div>
+        
+        <div class="inner-container">
+          <h3>COMPARE &amp; GET RELATIVE LIKES</h3>
+          <form id="testForm" class="border">
+            <input type="text" name="stock" placeholder="GOOG" required="" />
+            <input type="text" name="stock" placeholder="MSFT" required="" />
+            <input type="checkbox" name="like" value="true" /> Like both?
+            <br />
+            <br />
+            <button type="submit">Get Price!</button>
+          </form>
+          <code id="jsonResult"></code>
+        </div>
+        
+      </div>
+    </div>
+
+    <script src="/public/script.js"></script>
+  </body>
+</html>
